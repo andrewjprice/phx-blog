@@ -1,0 +1,25 @@
+<button>New Post</button>
+
+<table>
+    <thead>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Created At</th>
+        <th>Published</th>
+        <th>Options</th>
+    </thead>
+    <tbody>
+        <%= for post <- @posts do %>
+        <tr>
+            <td><%= post.title %></td>
+            <td><%= post.user.username %></td>
+            <td><%= post.inserted_at %></td>
+            <td><%= post.published %></td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

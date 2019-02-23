@@ -2,10 +2,13 @@ defmodule PhxBlog.Auth.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias PhxBlog.Blog.Post
 
   schema "users" do
     field :password, :string
     field :username, :string
+
+    has_many :posts, Post
 
     timestamps()
   end

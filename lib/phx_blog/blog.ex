@@ -1,19 +1,27 @@
 defmodule PhxBlog.Blog do
   import Ecto.Query, warn: false
-  alias PhxBlog.Repo
 
-  alias PhxBlog.Blog.Post
+  alias PhxBlog.{Repo, Blog.Post}
 
-  def list_posts do
+  def list_all_posts do
     Repo.all(Post)
+    |> Repo.preload(:user)
   end
 
-  def get_post!(id), do: Repo.get!(Post, id)
+  def list_posts_by_user(user_id) do
+    query = from p in Post, where: p.user_id == ^user_id
+    Repo.all(query)
+    |> Repo.preload(:user)
+  end
 
-  def create_post(attrs \\ %{}) do
-    %Post{}
-    |> Post.changeset(attrs)
-    |> Repo.insert()
+  def get_post!(id) do
+    Repo.get!(Post, id)
+    |> Repo.preload(:user)
+  end
+
+  def create_post(user, attrs \\ %{}) do
+    changeset = Ecto.build_assoc(user, :posts, attrs)
+    Repo.insert(changeset)
   end
 
   def update_post(%Post{} = post, attrs) do

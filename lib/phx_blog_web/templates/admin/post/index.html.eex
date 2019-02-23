@@ -13,7 +13,7 @@
         <tr>
             <td><%= post.title %></td>
             <td><%= post.user.username %></td>
-            <td><%= post.inserted_at %></td>
+            <td><%= relative_date(post) %></td>
             <td><%= post.published %></td>
             <td>
                 <button>Edit</button>

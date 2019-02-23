@@ -10,7 +10,6 @@ defmodule PhxBlog.Auth.User do
     timestamps()
   end
 
-  @doc false
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:username, :password])

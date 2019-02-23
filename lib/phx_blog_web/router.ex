@@ -39,5 +39,7 @@ defmodule PhxBlogWeb.Router do
 
     post "/logout", SessionController, :logout
     get "/", Admin.HomeController, :index
+
+    resources "/posts", Admin.PostController
   end
 end

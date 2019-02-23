@@ -1,4 +1,4 @@
-<button>New Post</button>
+<%= link "New Post", method: "get", to: Routes.post_path(@conn, :new), class: "btn btn-default" %>
 
 <table>
     <thead>

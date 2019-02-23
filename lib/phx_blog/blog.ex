@@ -19,8 +19,12 @@ defmodule PhxBlog.Blog do
     |> Repo.preload(:user)
   end
 
-  def create_post(user, attrs \\ %{}) do
-    changeset = Ecto.build_assoc(user, :posts, attrs)
+  def create(user, post_params) do
+    changeset =
+      user
+      |> Ecto.build_assoc(:posts)
+      |> Post.changeset(post_params)
+
     Repo.insert(changeset)
   end
 

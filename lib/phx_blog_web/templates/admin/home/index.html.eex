@@ -1,0 +1,2 @@
+<h2>Admin Page</h2>
+<p>You're logged in as <%= @current_user.username %></p>

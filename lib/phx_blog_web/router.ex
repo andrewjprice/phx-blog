@@ -23,7 +23,7 @@ defmodule PhxBlogWeb.Router do
     plug Guardian.Plug.EnsureAuthenticated
   end
 
-  # Maybe logged in routes
+  # Visitor
   scope "/", PhxBlogWeb do
     pipe_through [:browser, :auth]
 
@@ -31,18 +31,13 @@ defmodule PhxBlogWeb.Router do
 
     get "/login", SessionController, :new
     post "/login", SessionController, :login
-    post "/logout", SessionController, :logout
   end
 
-  # Definitely logged in scope
-  scope "/", PhxBlogWeb do
+  # Admin
+  scope "/admin", PhxBlogWeb do
     pipe_through [:browser, :auth, :ensure_auth]
 
-    get "/admin", PageController, :admin
+    post "/logout", SessionController, :logout
+    get "/", Admin.HomeController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PhxBlogWeb do
-  #   pipe_through :api
-  # end
 end

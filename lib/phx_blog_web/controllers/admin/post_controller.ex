@@ -14,8 +14,10 @@ defmodule PhxBlogWeb.Admin.PostController do
     render conn, "new.html", changeset: changeset
   end
 
-  def edit(conn, _) do
-    render conn, "edit.html"
+  def edit(conn, %{"id" => id}) do
+    post = Blog.get_post!(id)
+    changeset = Post.changeset(post, %{})
+    render conn, "edit.html", changeset: changeset, post: post
   end
 
   def create(conn, %{"post" => params}) do
@@ -32,7 +34,13 @@ defmodule PhxBlogWeb.Admin.PostController do
     end
   end
 
-  def update(conn, _) do
+  def update(conn, %{"id" => id, "post" => params}) do
+    post = Blog.get_post!(id)
+    with {:ok, _post} <- Blog.update_post(post, params) do
+      conn
+      |> put_flash(:info, "Successfully updated post")
+      |> redirect(to: Routes.post_path(conn, :index))
+    end
   end
 
   def delete(conn, _) do

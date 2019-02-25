@@ -16,8 +16,8 @@
             <td><%= relative_date(post) %></td>
             <td><%= post.published %></td>
             <td>
-                <button>Edit</button>
-                <button>Delete</button>
+                <%= link "Edit", method: "get", to: Routes.post_path(@conn, :edit, post.id), class: "btn btn-default" %>
+                <%= link "Delete", method: "delete", to: Routes.post_path(@conn, :delete, post.id), class: "btn btn-default" %>
             </td>
         </tr>
         <% end %>

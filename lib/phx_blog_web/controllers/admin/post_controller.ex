@@ -43,6 +43,11 @@ defmodule PhxBlogWeb.Admin.PostController do
     end
   end
 
-  def delete(conn, _) do
+  def delete(conn, %{"id" => id}) do
+    post = Blog.get_post!(id)
+    {:ok, _post} = Blog.delete_post(post)
+    conn
+    |> put_flash(:info, "Successfully deleted post")
+    |> redirect(to: Routes.post_path(conn, :index))
   end
 end

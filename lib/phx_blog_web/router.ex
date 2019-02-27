@@ -27,10 +27,11 @@ defmodule PhxBlogWeb.Router do
   scope "/", PhxBlogWeb do
     pipe_through [:browser, :auth]
 
-    get "/", PageController, :index
-
     get "/login", SessionController, :new
     post "/login", SessionController, :login
+
+    get "/", PageController, :index
+    get "/post/:id", PageController, :show
   end
 
   # Admin
@@ -40,6 +41,6 @@ defmodule PhxBlogWeb.Router do
     post "/logout", SessionController, :logout
     get "/", Admin.HomeController, :index
 
-    resources "/posts", Admin.PostController
+    resources "/posts", Admin.PostController, except: [:show]
   end
 end

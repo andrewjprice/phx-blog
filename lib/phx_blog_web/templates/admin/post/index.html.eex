@@ -1,4 +1,4 @@
-<%= link "New Post", method: "get", to: Routes.post_path(@conn, :new), class: "btn btn-default" %>
+<%= link "New Post", method: "get", to: Routes.post_path(@conn, :new), class: "btn btn-primary" %>
 
 <table>
     <thead>
@@ -16,8 +16,8 @@
             <td><%= relative_date(post) %></td>
             <td><%= post.published %></td>
             <td>
-                <%= link "Edit", method: "get", to: Routes.post_path(@conn, :edit, post.id), class: "btn btn-default" %>
-                <%= link "Delete", method: "delete", to: Routes.post_path(@conn, :delete, post.id), data: [confirm: "Permanently delete post?"], class: "btn btn-default" %>
+                <%= link "Edit", method: "get", to: Routes.post_path(@conn, :edit, post.id), class: "btn btn-info" %>
+                <%= link "Delete", method: "delete", to: Routes.post_path(@conn, :delete, post.id), data: [confirm: "Permanently delete post?"], class: "btn btn-danger" %>
             </td>
         </tr>
         <% end %>

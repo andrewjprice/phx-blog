@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-12">
         <div class="text-center">
             <h1><%= @post.title %></h1>
             <h4>Author: <%= @post.user.username %></h4>

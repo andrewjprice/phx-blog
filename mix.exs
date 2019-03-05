@@ -46,7 +46,9 @@ defmodule PhxBlog.MixProject do
       {:guardian, "~> 1.0"},
       {:comeonin, "~> 5.0"},
       {:bcrypt_elixir, "~> 2.0"},
-      {:timex, "~> 3.1"}
+      {:timex, "~> 3.1"},
+      {:arc, "~> 0.11.0"},
+      {:arc_ecto, "~> 0.11.1"}
     ]
   end
 

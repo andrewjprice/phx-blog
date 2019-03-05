@@ -30,6 +30,9 @@ config :phx_blog, PhxBlog.Auth.Guardian,
   issuer: "phx_blog",
   secret_key: "kpH5SgF72OZZVvYsQ2F82wkDlemVklJZhZ+HuwjRpjEQ2qkl2rhe2KKW74A63Bd2"
 
+config :arc,
+  storage: Arc.Storage.Local
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

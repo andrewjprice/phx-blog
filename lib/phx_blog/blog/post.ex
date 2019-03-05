@@ -1,12 +1,13 @@
 defmodule PhxBlog.Blog.Post do
   use Ecto.Schema
+  use Arc.Ecto.Schema
   import Ecto.Changeset
 
   alias PhxBlog.Auth.User
 
   schema "posts" do
     field :body, :string
-    field :cover, :string
+    field :cover, PhxBlog.Cover.Type
     field :published, :boolean, default: false
     field :title, :string
 

@@ -48,7 +48,8 @@ defmodule PhxBlog.MixProject do
       {:bcrypt_elixir, "~> 2.0"},
       {:timex, "~> 3.1"},
       {:arc, "~> 0.11.0"},
-      {:arc_ecto, "~> 0.11.1"}
+      {:arc_ecto, "~> 0.11.1"},
+      {:earmark, "~> 1.3.1" }
     ]
   end
 

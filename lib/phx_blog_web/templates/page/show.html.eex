@@ -4,12 +4,11 @@
         src="<%= PhxBlog.Cover.url({@post.cover, @post}) %>" 
         alt="cover image"
         style="width: 100%">
-        <br><br><br>
+        <br><br>
         <div class="text-center">
             <h1><%= @post.title %></h1>
             <h4>Author: <%= @post.user.username %></h4>
-            <br><br>
-            <p><%= @post.body %></p>
+            <p><%= markdown(@post.body) %></p>
         </div>        
     </div>
 </div>

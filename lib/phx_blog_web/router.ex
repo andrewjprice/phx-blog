@@ -41,6 +41,8 @@ defmodule PhxBlogWeb.Router do
     post "/logout", SessionController, :logout
     get "/", Admin.HomeController, :index
 
-    resources "/posts", Admin.PostController, except: [:show]
+    resources "/posts", Admin.PostController, except: [:show] do
+      get "/publish", Admin.PostController, :publish, as: :publish
+    end
   end
 end

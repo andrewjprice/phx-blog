@@ -4,7 +4,7 @@ defmodule PhxBlogWeb.PageController do
   alias PhxBlog.Blog
 
   def index(conn, _params) do
-    posts = Blog.list_all_posts
+    posts = Blog.list_published_posts
     render(conn, "index.html", posts: posts)
   end
 

@@ -5,7 +5,6 @@
         <th>Title</th>
         <th>Author</th>
         <th>Created At</th>
-        <th>Published</th>
         <th>Options</th>
     </thead>
     <tbody>
@@ -14,9 +13,13 @@
             <td><%= link post.title, method: "get", to: Routes.page_path(@conn, :show, post.id) %></td>
             <td><%= post.user.username %></td>
             <td><%= relative_date(post) %></td>
-            <td><%= post.published %></td>
             <td>
                 <%= link "Edit", method: "get", to: Routes.post_path(@conn, :edit, post.id), class: "btn btn-info" %>
+                <%= if post.published do %>
+                    <%= link "Unpublish", method: "get", to: Routes.post_publish_path(@conn, :publish, post.id), data: [confirm: "Unpublish post?"], class: "btn btn-warning" %>
+                <% else %>
+                    <%= link "Publish", method: "get", to: Routes.post_publish_path(@conn, :publish, post.id), data: [confirm: "Publish post?"], class: "btn btn-warning" %>
+                <% end %>
                 <%= link "Delete", method: "delete", to: Routes.post_path(@conn, :delete, post.id), data: [confirm: "Permanently delete post?"], class: "btn btn-danger" %>
             </td>
         </tr>

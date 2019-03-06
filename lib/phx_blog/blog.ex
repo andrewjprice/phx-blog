@@ -14,6 +14,10 @@ defmodule PhxBlog.Blog do
     |> Repo.preload(:user)
   end
 
+  def list_published_posts do
+    Repo.all(from p in Post, where: p.published == true, preload: :user)
+  end
+
   def get_post!(id) do
     Repo.get!(Post, id)
     |> Repo.preload(:user)
@@ -40,5 +44,10 @@ defmodule PhxBlog.Blog do
 
   def change_post(%Post{} = post) do
     Post.changeset(post, %{})
+  end
+
+  def publish_post(%Post{} = post) do
+    Post.changeset(post, %{published: not post.published})
+    |> Repo.update()
   end
 end

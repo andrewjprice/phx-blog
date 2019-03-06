@@ -50,4 +50,11 @@ defmodule PhxBlogWeb.Admin.PostController do
     |> put_flash(:info, "Successfully deleted post")
     |> redirect(to: Routes.post_path(conn, :index))
   end
+
+  def publish(conn, %{"post_id" => id}) do
+    post = Blog.get_post!(id)
+    {:ok, _post} = Blog.publish_post(post)
+    conn
+    |> redirect(to: Routes.post_path(conn, :index))
+  end
 end

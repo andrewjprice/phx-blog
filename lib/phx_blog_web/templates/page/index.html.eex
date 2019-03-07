@@ -1,13 +1,12 @@
 <div class="container">
-  <div class="card-columns">
-    <%= for post <- @posts do %>
-      <div class="card">
-        <img class="card-img-top" src="<%= PhxBlog.Cover.url({post.cover, post}) %>" alt="cover">
-        <div class="card-body">
-          <h5 class="card-title"><%= link post.title, method: "get", to: Routes.page_path(@conn, :show, post.id) %></h5>
-          <p class="card-text"><%= post_excerpt(post) %></p>
-        </div>
+  <%= for post <- @posts do %>
+    <div class="card flex-md-row shadow-sm h-md-250 mb-3">
+      <div class="card-body d-flex flex-column align-items-start">
+        <h1 class="card-title"><%= link post.title, method: "get", to: Routes.page_path(@conn, :show, post.id) %></h1>
+        <p class="card-text"><%= post_excerpt(post) %></p>
+        <p class="card-text"><small class="text-muted">Last updated <%= relative_date(post) %></small></p>
       </div>
-    <% end %>
-  </div>
+      <img class="card-img-right flex-auto d-none d-lg-block" src="<%= PhxBlog.Cover.url({post.cover, post}) %>" alt="cover" style="width: 32rem; height: 32rem">
+    </div>
+  <% end %>
 </div>

@@ -1,0 +1,9 @@
+.flexbox {
+    display: flex;
+    padding: 0 1%;
+}
+
+.flex-item {
+    flex: 1;
+    margin: 0 1%;
+}

@@ -1,0 +1,28 @@
+.nav {
+    margin: 0 auto;
+    padding: 0 2.0rem;
+    position: relative;
+    width: 100%
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-container {
+    width: 25%;
+}
+
+ul li:first-child {
+  order: 5;
+}
+ul li:nth-child(2) {
+  order: 4;
+}
+ul li:nth-child(3) {
+  order: 3;
+}
+ul li:nth-child(4) {
+  order: 2;
+}

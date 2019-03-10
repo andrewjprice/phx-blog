@@ -9,13 +9,15 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+      <section class="nav">
+        <nav class="navbar-container">
+          <ul class="navbar">
             <%= if Guardian.Plug.authenticated?(@conn, []) do %>
               <li><%= link "Logout", to: Routes.session_path(@conn, :logout), method: :post %></li>
+              <li><%= link "Posts", to: Routes.post_path(@conn, :index), method: :get %></li>
             <% end %>
+            <li><a href="#">About</a></li>
+            <li><%= link "Home", to: Routes.page_path(@conn, :index), method: :get %></li>
           </ul>
         </nav>
         <a href="http://phoenixframework.org/" class="phx-logo">

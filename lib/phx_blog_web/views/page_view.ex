@@ -2,7 +2,7 @@ defmodule PhxBlogWeb.PageView do
   use PhxBlogWeb, :view
 
   def post_excerpt(post) do
-    String.slice(post.body, 0..120) <> " ..."
+    String.slice(post.body, 0..200) <> " ..."
     |> Earmark.as_html!
     |> raw
   end

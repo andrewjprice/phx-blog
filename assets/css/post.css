@@ -7,3 +7,13 @@
     flex: 1;
     margin: 0 1%;
 }
+
+.cover-image {
+    max-width: 300px;
+    height: auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}

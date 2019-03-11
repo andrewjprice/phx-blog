@@ -1,9 +1,8 @@
 <div class="row">
     <div class="text-center">
-        <img class="img img-fluid" 
-        src="<%= PhxBlog.Cover.url({@post.cover, @post}) %>" 
-        alt="cover image"
-        style="width: 100%">
+        <div class="col-sm-12">
+                <img class="img" src="<%= PhxBlog.Cover.url({@post.cover, @post}) %>" alt="cover" style="width: 50%; height:auto">
+        </div>
         <br><br>
         <div class="text-center">
             <h1><%= @post.title %></h1>

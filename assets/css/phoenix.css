@@ -15,10 +15,10 @@ h3{font-size: 2.2rem; letter-spacing: -.08rem; line-height: 1.35}
 h4{font-size: 1.8rem; letter-spacing: -.05rem; line-height: 1.5}
 h5{font-size: 1.6rem; letter-spacing: 0; line-height: 1.4}
 h6{font-size: 1.4rem; letter-spacing: 0; line-height: 1.2}
-
+p{margin-bottom: 1rem}
 .container{
   margin: 0 auto;
-  max-width: 80.0rem;
+  max-width: 100rem;
   padding: 0 2.0rem;
   position: relative;
   width: 100%

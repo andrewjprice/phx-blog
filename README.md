@@ -1,5 +1,11 @@
 # PhxBlog
 
+Basic boilerplate blog app using the Phoenix Framework. Includes user authentication, markdown editing, file uploads, Bootstrap, Font Awesome. 
+
+# Seed data
+username: phx
+password: 1234
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

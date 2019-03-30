@@ -1,10 +1,6 @@
 # PhxBlog
 
-Basic boilerplate blog app using the Phoenix Framework. Includes user authentication, markdown editing, file uploads, Bootstrap, Font Awesome. 
-
-## Seed data
-username: phx
-password: 1234
+Basic boilerplate blog app using the Phoenix Framework. Includes user authentication, markdown editing, file uploads, Bootstrap, Font Awesome.
 
 ## Admin
 ![admin](https://github.com/andrewjprice/phx-blog/blob/master/assets/images/admin.png)
@@ -17,6 +13,11 @@ password: 1234
 
 ## Post
 ![post](https://github.com/andrewjprice/phx-blog/blob/master/assets/images/post.png)
+
+## Seeds to login
+username: phx
+
+password: 1234
 
 ## Run
 To start your Phoenix server:

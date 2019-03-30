@@ -1,7 +1,7 @@
-<div class="container">
+<div class="card-container">
   <%= for post <- @posts do %>
-    <div class="card shadow-sm mb-5">
-        <div class="d-flex">
+    <div class="card shadow-sm mb-5 fill">
+        <div class="d-flex fill">
             <div>
                 <img src="<%= PhxBlog.Cover.url({post.cover, post}) %>"  class="cover-image" alt="">
             </div>

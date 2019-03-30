@@ -11,6 +11,17 @@
 .cover-image {
     max-width: 300px;
     height: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card-container {
+    margin: 0 auto;
+    max-width: 100rem;
+    padding: 0 2.0rem;
+    position: relative;
+    width: 100%;
+    height: 25rem;
 }
 
 .footer {
